@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import ProductGallery from "./components/ProductGallery";
 
 export default function App() {
   return (
@@ -7,39 +8,7 @@ export default function App() {
       <main>
         <div className="w-full max-w-screen-lg mx-auto p-16">
           <div className="grid md:grid-cols-2 items-center gap-24">
-            <section>
-              <img
-                className="rounded-2xl mb-8"
-                src="./src/assets/images/image-product-1.jpg"
-                alt="Image 1"
-              />
-              <ul className="flex gap-8">
-                <li>
-                  <img
-                    src="./src/assets/images/image-product-1-thumbnail.jpg"
-                    alt=""
-                  />
-                </li>
-                <li>
-                  <img
-                    src="./src/assets/images/image-product-2-thumbnail.jpg"
-                    alt=""
-                  />
-                </li>
-                <li>
-                  <img
-                    src="./src/assets/images/image-product-3-thumbnail.jpg"
-                    alt=""
-                  />
-                </li>
-                <li>
-                  <img
-                    src="./src/assets/images/image-product-4-thumbnail.jpg"
-                    alt=""
-                  />
-                </li>
-              </ul>
-            </section>
+            <ProductGallery />
             <section className="flex flex-col gap-4">
               <p className="font-bold text-[var(--dark-grayish-blue)] tracking-widest uppercase">
                 Sneaker Company
