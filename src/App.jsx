@@ -1,5 +1,8 @@
+import Button from "./components/Button";
 import Header from "./components/Header";
 import ProductGallery from "./components/ProductGallery";
+import QuantitySelector from "./components/QuantitySelector";
+import IconCart from "./components/icons/IconCart";
 
 export default function App() {
   return (
@@ -31,8 +34,11 @@ export default function App() {
                 $250.00
               </p>
               <div className="flex items-center gap-4">
-                <div>0</div>
-                <button>Add to cart</button>
+                <QuantitySelector />
+                <Button>
+                  <IconCart color="var(--very-dark-blue)" />
+                  Add to cart
+                </Button>
               </div>
             </section>
           </div>
