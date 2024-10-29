@@ -1,5 +1,5 @@
+import { CartSection } from "./CartSection";
 import Logo from "./Logo";
-import iconCart from "../assets/images/icon-cart.svg";
 import imgAvatar from "../assets/images/image-avatar.png";
 
 export default function Header() {
@@ -15,7 +15,7 @@ export default function Header() {
             <a href="#">About</a>
             <a href="#">Contact</a>
           </nav>
-          <img src={iconCart} alt="Icon cart" />
+          <CartSection />
           <img className="size-12" src={imgAvatar} alt="Avatar" />
         </div>
       </div>
