@@ -1,27 +1,47 @@
+import { useState } from "react";
+
 export default function ProductGallery() {
   const listImage = [1, 2, 3, 4];
 
+  const [activeImage, setActiveImage] = useState(1);
+
   return (
     <section>
-      <img
-        className="rounded-2xl mb-8"
-        src="./src/assets/images/image-product-1.jpg"
-        alt="Image 1"
-      />
+      <ProductImage activeImage={activeImage} />
       <ul className="flex gap-8">
-        {listImage.map((img, index) => (
-          <ThumbnailImage key={index} src={img} />
+        {listImage.map((image) => (
+          <ProductThumbnail
+            key={image}
+            src={image}
+            isActive={image === activeImage}
+            onClick={() => setActiveImage(image)}
+          />
         ))}
       </ul>
     </section>
   );
 }
 
-export function ThumbnailImage({ src }) {
+export function ProductImage({ activeImage }) {
   return (
-    <li>
+    <img
+      className="rounded-2xl mb-8"
+      src={`./src/assets/images/image-product-${activeImage}.jpg`}
+      alt={`Image ${activeImage}`}
+    />
+  );
+}
+
+export function ProductThumbnail({ src, isActive, onClick }) {
+  return (
+    <li
+      className={`overflow-hidden cursor-pointer rounded-lg ${
+        isActive ? "active-image" : ""
+      }`}
+      onClick={onClick}
+    >
       <img
-        className="rounded-lg"
+        className="hover:opacity-50"
         src={`./src/assets/images/image-product-${src}-thumbnail.jpg`}
         alt={`Image ${src}`}
       />
