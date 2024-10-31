@@ -2,7 +2,7 @@ import { useState } from "react";
 import Cart from "./Cart";
 import IconCart from "./icons/IconCart";
 
-export function CartSection() {
+export default function CartSection() {
   const [isCartVisible, setIsCartVisible] = useState(false);
 
   return (
