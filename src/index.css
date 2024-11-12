@@ -52,3 +52,15 @@ body {
 .active-image img {
   opacity: 0.5;
 }
+
+.btn-lightbox {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  background-color: white;
+  height: 3.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  color: #1d2026;
+  cursor: pointer;
+}

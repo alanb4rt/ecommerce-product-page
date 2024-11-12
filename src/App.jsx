@@ -1,8 +1,8 @@
 import Button from "./components/Button";
 import Header from "./components/Header";
-import ProductGallery from "./components/ProductGallery";
 import QuantitySelector from "./components/QuantitySelector";
 import IconCart from "./components/icons/IconCart";
+import ProductImageViewer from "./components/ProductImageViewer";
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
       <main>
         <div className="w-full max-w-screen-lg mx-auto p-16">
           <div className="grid md:grid-cols-2 items-center gap-24">
-            <ProductGallery />
+            <ProductImageViewer />
             <section className="flex flex-col gap-4">
               <p className="font-bold text-[var(--dark-grayish-blue)] tracking-widest uppercase">
                 Sneaker Company

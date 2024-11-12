@@ -1,15 +1,20 @@
-import { useState } from "react";
+import ProductImage from "./ProductImage";
+import ProductThumbnail from "./ProductThumbnail";
 
-export default function ProductGallery() {
-  const listImage = [1, 2, 3, 4];
-
-  const [activeImage, setActiveImage] = useState(1);
-
+export default function ProductGallery({
+  imageList,
+  activeImage,
+  setActiveImage,
+  setIsLightboxVisible,
+}) {
   return (
     <section>
-      <ProductImage activeImage={activeImage} />
+      <ProductImage
+        activeImage={activeImage}
+        setIsLightboxVisible={setIsLightboxVisible}
+      />
       <ul className="flex gap-8">
-        {listImage.map((image) => (
+        {imageList.map((image) => (
           <ProductThumbnail
             key={image}
             src={image}
@@ -19,32 +24,5 @@ export default function ProductGallery() {
         ))}
       </ul>
     </section>
-  );
-}
-
-export function ProductImage({ activeImage }) {
-  return (
-    <img
-      className="rounded-2xl mb-8"
-      src={`./src/assets/images/image-product-${activeImage}.jpg`}
-      alt={`Image ${activeImage}`}
-    />
-  );
-}
-
-export function ProductThumbnail({ src, isActive, onClick }) {
-  return (
-    <li
-      className={`overflow-hidden cursor-pointer rounded-lg ${
-        isActive ? "active-image" : ""
-      }`}
-      onClick={onClick}
-    >
-      <img
-        className="hover:opacity-50"
-        src={`./src/assets/images/image-product-${src}-thumbnail.jpg`}
-        alt={`Image ${src}`}
-      />
-    </li>
   );
 }
