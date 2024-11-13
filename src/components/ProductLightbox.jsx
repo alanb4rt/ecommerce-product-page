@@ -29,7 +29,7 @@ export default function ProductLightbox({
               <button
                 className="btn-lightbox -left-8 hover:text-[var(--color-primary)]"
                 onClick={() => setActiveImageIndex(activeImageIndex - 1)}
-                disabled={activeImageIndex === 1}
+                disabled={activeImageIndex === 0}
               >
                 <IconPrevious color="currentcolor" />
               </button>
@@ -37,7 +37,7 @@ export default function ProductLightbox({
               <button
                 className="btn-lightbox -right-8 hover:text-[var(--color-primary)]"
                 onClick={() => setActiveImageIndex(activeImageIndex + 1)}
-                disabled={activeImageIndex === images.length}
+                disabled={activeImageIndex === images.length - 1}
               >
                 <IconNext color="currentcolor" />
               </button>
