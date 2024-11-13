@@ -2,24 +2,24 @@ import ProductImage from "./ProductImage";
 import ProductThumbnail from "./ProductThumbnail";
 
 export default function ProductGallery({
-  imageList,
-  activeImage,
-  setActiveImage,
+  images,
+  activeImageIndex,
+  setActiveImageIndex,
   setIsLightboxVisible,
 }) {
   return (
     <section>
       <ProductImage
-        activeImage={activeImage}
+        activeImageIndex={images[activeImageIndex]}
         setIsLightboxVisible={setIsLightboxVisible}
       />
       <ul className="flex gap-8">
-        {imageList.map((image) => (
+        {images.map((image) => (
           <ProductThumbnail
             key={image}
             src={image}
-            isActive={image === activeImage}
-            onClick={() => setActiveImage(image)}
+            isActive={image === images[activeImageIndex]}
+            onClick={() => setActiveImageIndex(images.indexOf(image))}
           />
         ))}
       </ul>

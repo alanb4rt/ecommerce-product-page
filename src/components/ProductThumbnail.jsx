@@ -8,8 +8,8 @@ export default function ProductThumbnail({ src, isActive, onClick }) {
     >
       <img
         className="hover:opacity-50"
-        src={`./src/assets/images/image-product-${src}-thumbnail.jpg`}
-        alt={`Image ${src}`}
+        src={`./src/assets/images/${src}-thumbnail.jpg`}
+        alt={src}
       />
     </li>
   );

@@ -6,11 +6,11 @@ import IconNext from "./icons/IconNext";
 import IconPrevious from "./icons/IconPrevious";
 
 export default function ProductLightbox({
-  imageList,
-  activeImage: showImage,
+  images,
+  activeImageIndex: showImage,
   setIsLightboxVisible,
 }) {
-  const [activeImage, setActiveImage] = useState(showImage);
+  const [activeImageIndex, setActiveImageIndex] = useState(showImage);
 
   return (
     <div className="fixed inset-0 w-full h-screen bg-black/75">
@@ -28,27 +28,27 @@ export default function ProductLightbox({
             <div className="relative flex items-center">
               <button
                 className="btn-lightbox -left-8 hover:text-[var(--color-primary)]"
-                onClick={() => setActiveImage(activeImage - 1)}
-                disabled={activeImage === 1}
+                onClick={() => setActiveImageIndex(activeImageIndex - 1)}
+                disabled={activeImageIndex === 1}
               >
                 <IconPrevious color="currentcolor" />
               </button>
-              <ProductImage activeImage={activeImage} />
+              <ProductImage activeImageIndex={images[activeImageIndex]} />
               <button
                 className="btn-lightbox -right-8 hover:text-[var(--color-primary)]"
-                onClick={() => setActiveImage(activeImage + 1)}
-                disabled={activeImage === imageList.length}
+                onClick={() => setActiveImageIndex(activeImageIndex + 1)}
+                disabled={activeImageIndex === images.length}
               >
                 <IconNext color="currentcolor" />
               </button>
             </div>
             <ul className="flex gap-8 w-4/5 mx-auto">
-              {imageList.map((image) => (
+              {images.map((image) => (
                 <ProductThumbnail
                   key={image}
                   src={image}
-                  isActive={image === activeImage}
-                  onClick={() => setActiveImage(image)}
+                  isActive={image === images[activeImageIndex]}
+                  onClick={() => setActiveImageIndex(images.indexOf(image))}
                 />
               ))}
             </ul>

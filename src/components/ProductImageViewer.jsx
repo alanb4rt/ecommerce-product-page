@@ -2,24 +2,22 @@ import { useState } from "react";
 import ProductGallery from "./ProductGallery";
 import ProductLightbox from "./ProductLightbox";
 
-export default function ProductImageViewer() {
+export default function ProductImageViewer({ productImages }) {
   const [isLightboxVisible, setIsLightboxVisible] = useState(false);
-  const [activeImage, setActiveImage] = useState(1);
-
-  const imageList = [1, 2, 3, 4];
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   return (
     <>
       <ProductGallery
-        imageList={imageList}
-        activeImage={activeImage}
-        setActiveImage={setActiveImage}
+        images={productImages}
+        activeImageIndex={activeImageIndex}
+        setActiveImageIndex={setActiveImageIndex}
         setIsLightboxVisible={setIsLightboxVisible}
       />
       {isLightboxVisible && (
         <ProductLightbox
-          imageList={imageList}
-          activeImage={activeImage}
+          images={productImages}
+          activeImageIndex={activeImageIndex}
           setIsLightboxVisible={setIsLightboxVisible}
         />
       )}
