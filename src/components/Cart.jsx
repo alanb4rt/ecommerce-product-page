@@ -1,16 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Button from "./Button";
 import { CartItem } from "./CartItem";
-
-const fakeData = {
-  image: "./src/assets/images/image-product-1-thumbnail.jpg",
-  title: "Fall Limited Edition Sneakers",
-  price: 125,
-  quantity: 3,
-};
+import { CartContext } from "../contexts/CartProvider";
 
 export default function Cart() {
-  const [cartItems, setCartItems] = useState([fakeData]);
+  const { cartItems } = useContext(CartContext);
 
   return (
     <section className="absolute top-11 w-96 bg-white rounded-lg shadow-xl">
@@ -23,7 +17,7 @@ export default function Cart() {
             Your cart is empty.
           </p>
         ) : (
-          cartItems.map((item, index) => <CartItem key={index} {...item} />)
+          cartItems.map((item, index) => <CartItem key={index} value={item} />)
         )}
         {cartItems.length > 0 && <Button>Checkout</Button>}
       </div>
