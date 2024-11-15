@@ -28,11 +28,13 @@ export function CartItem({ value }) {
         src={imageURL}
         alt="Image product"
       />
-      <div className="flex-1 flex flex-col text-[var(--dark-grayish-blue)]">
+      <div className="flex-1 flex flex-col text-sm md:text-base text-[var(--dark-grayish-blue)]">
         <p>{name}</p>
-        <p className="text-lg">
+        <p>
           ${discountedPrice} x {value.quantity}{" "}
-          <span className="text-black font-bold">${totalPrice}</span>
+          <span className="text-[var(--very-dark-blue)] font-bold">
+            ${totalPrice}
+          </span>
         </p>
       </div>
       <button

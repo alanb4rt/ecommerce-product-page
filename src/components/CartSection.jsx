@@ -6,7 +6,7 @@ export default function CartSection() {
   const [isCartVisible, setIsCartVisible] = useState(false);
 
   return (
-    <div className="relative flex flex-col items-center">
+    <div className="md:relative flex flex-col items-center">
       <button
         className="cursor-pointer"
         onClick={() => setIsCartVisible(!isCartVisible)}

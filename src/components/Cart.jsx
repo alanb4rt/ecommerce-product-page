@@ -7,7 +7,7 @@ export default function Cart() {
   const { cartItems } = useContext(CartContext);
 
   return (
-    <section className="absolute top-11 w-96 bg-white rounded-lg shadow-xl">
+    <section className="absolute left-2 md:left-[inherit] right-2 md:right-[inherit] top-16 md:top-10 mt-2 md:w-96 bg-white rounded-lg shadow-xl">
       <div className="p-6 border-b-[1px]">
         <p className="font-bold">Cart</p>
       </div>
