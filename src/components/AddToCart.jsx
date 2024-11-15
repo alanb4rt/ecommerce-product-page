@@ -25,7 +25,10 @@ export default function AddToCart({ productId }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-4">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col md:flex-row items-center gap-4"
+    >
       <QuantitySelector handleQuantity={handleQuantity} />
       <Button type="submit">
         <IconCart color="var(--very-dark-blue)" />

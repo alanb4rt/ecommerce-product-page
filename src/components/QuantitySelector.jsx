@@ -10,7 +10,7 @@ export default function QuantitySelector({ handleQuantity }) {
   }, [quantity, handleQuantity]);
 
   return (
-    <div className="flex items-center gap-8 p-3 bg-[var(--light-grayish-blue)] rounded-lg">
+    <div className="w-full md:w-fit flex items-center justify-between md:justify-normal gap-8 p-3 bg-[var(--light-grayish-blue)] rounded-lg">
       <button
         type="button"
         className="p-1 hover:brightness-150"
