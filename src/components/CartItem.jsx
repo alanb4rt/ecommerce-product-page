@@ -2,6 +2,7 @@ import { useContext } from "react";
 import IconDelete from "./icons/IconDelete";
 import Products from "../data/products.json";
 import { CartContext } from "../contexts/CartProvider";
+import { getImageURL } from "../utils/getImageURL";
 
 export function CartItem({ value }) {
   const { cartItems, setCartItems } = useContext(CartContext);
@@ -10,7 +11,7 @@ export function CartItem({ value }) {
 
   const { id, images, name, price, discount } = product;
 
-  const imageURL = `./src/assets/images/${images[0]}-thumbnail.jpg`;
+  const imageURL = getImageURL(`${images[0]}-thumbnail.jpg`);
 
   const discountedPrice = (price * (discount / 100)).toFixed(2);
 

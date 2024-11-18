@@ -1,3 +1,5 @@
+import { getImageURL } from "../utils/getImageURL";
+
 export default function ProductImage({
   activeImageIndex,
   setIsLightboxVisible,
@@ -5,7 +7,7 @@ export default function ProductImage({
   return (
     <img
       className="cursor-pointer rounded-2xl mb-8"
-      src={`./src/assets/images/${activeImageIndex}.jpg`}
+      src={getImageURL(`${activeImageIndex}.jpg`)}
       alt={activeImageIndex}
       onClick={() => setIsLightboxVisible(true)}
     />

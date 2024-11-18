@@ -1,3 +1,5 @@
+import { getImageURL } from "../utils/getImageURL";
+
 export default function ProductThumbnail({ src, isActive, onClick }) {
   return (
     <li
@@ -8,7 +10,7 @@ export default function ProductThumbnail({ src, isActive, onClick }) {
     >
       <img
         className="hover:opacity-50"
-        src={`./src/assets/images/${src}-thumbnail.jpg`}
+        src={getImageURL(`${src}-thumbnail.jpg`)}
         alt={src}
       />
     </li>
