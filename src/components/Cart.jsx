@@ -11,7 +11,7 @@ export default function Cart() {
       <div className="p-6 border-b-[1px]">
         <p className="font-bold">Cart</p>
       </div>
-      <div className="flex flex-col gap-6 p-6 min-h-40">
+      <div className="flex flex-col gap-6 p-6 min-h-44">
         {cartItems.length === 0 ? (
           <p className="m-auto font-bold text-[var(--dark-grayish-blue)]">
             Your cart is empty.

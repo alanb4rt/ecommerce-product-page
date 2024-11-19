@@ -13,7 +13,7 @@ export default function ProductGallery({
         activeImageIndex={images[activeImageIndex]}
         setIsLightboxVisible={setIsLightboxVisible}
       />
-      <ul className="flex gap-8">
+      <ul className="hidden md:flex gap-8">
         {images.map((image) => (
           <ProductThumbnail
             key={image}

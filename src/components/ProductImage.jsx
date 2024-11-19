@@ -6,7 +6,7 @@ export default function ProductImage({
 }) {
   return (
     <img
-      className="cursor-pointer rounded-2xl mb-8"
+      className="w-full h-72 md:h-auto object-cover cursor-pointer md:rounded-2xl md:mb-8"
       src={getImageURL(`${activeImageIndex}.jpg`)}
       alt={activeImageIndex}
       onClick={() => setIsLightboxVisible(true)}
