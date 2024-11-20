@@ -1,3 +1,5 @@
+import IconNext from "./icons/IconNext";
+import IconPrevious from "./icons/IconPrevious";
 import ProductImage from "./ProductImage";
 import ProductThumbnail from "./ProductThumbnail";
 
@@ -9,10 +11,26 @@ export default function ProductGallery({
 }) {
   return (
     <section>
-      <ProductImage
-        activeImageIndex={images[activeImageIndex]}
-        setIsLightboxVisible={setIsLightboxVisible}
-      />
+      <div className="relative flex items-center">
+        <button
+          className="btn-pagination left-4 hover:text-[var(--color-primary)] md:hidden"
+          onClick={() => setActiveImageIndex(activeImageIndex - 1)}
+          disabled={activeImageIndex === 0}
+        >
+          <IconPrevious color="currentcolor" />
+        </button>
+        <ProductImage
+          activeImageIndex={images[activeImageIndex]}
+          setIsLightboxVisible={setIsLightboxVisible}
+        />
+        <button
+          className="btn-pagination right-4 hover:text-[var(--color-primary)] md:hidden"
+          onClick={() => setActiveImageIndex(activeImageIndex + 1)}
+          disabled={activeImageIndex === images.length - 1}
+        >
+          <IconNext color="currentcolor" />
+        </button>
+      </div>
       <ul className="hidden md:flex gap-8">
         {images.map((image) => (
           <ProductThumbnail

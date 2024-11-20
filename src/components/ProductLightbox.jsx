@@ -27,7 +27,7 @@ export default function ProductLightbox({
           <section>
             <div className="relative flex items-center">
               <button
-                className="btn-lightbox -left-8 hover:text-[var(--color-primary)]"
+                className="btn-pagination -left-8 hover:text-[var(--color-primary)]"
                 onClick={() => setActiveImageIndex(activeImageIndex - 1)}
                 disabled={activeImageIndex === 0}
               >
@@ -35,7 +35,7 @@ export default function ProductLightbox({
               </button>
               <ProductImage activeImageIndex={images[activeImageIndex]} />
               <button
-                className="btn-lightbox -right-8 hover:text-[var(--color-primary)]"
+                className="btn-pagination -right-8 hover:text-[var(--color-primary)]"
                 onClick={() => setActiveImageIndex(activeImageIndex + 1)}
                 disabled={activeImageIndex === images.length - 1}
               >
