@@ -4,10 +4,10 @@ import Products from "../data/products.json";
 import { CartContext } from "../contexts/CartProvider";
 import { getImageURL } from "../utils/getImageURL";
 
-export function CartItem({ value }) {
+export default function CartItem({ item }) {
   const { cartItems, setCartItems } = useContext(CartContext);
 
-  const product = Products.find(({ id }) => id === value.id);
+  const product = Products.find(({ id }) => id === item.id);
 
   const { id, images, name, price, discount } = product;
 
@@ -15,7 +15,7 @@ export function CartItem({ value }) {
 
   const discountedPrice = (price * (discount / 100)).toFixed(2);
 
-  const totalPrice = (discountedPrice * value.quantity).toFixed(2);
+  const totalPrice = (discountedPrice * item.quantity).toFixed(2);
 
   const handleDelete = (id) => {
     const filteredItems = cartItems.filter((item) => item.id !== id);
@@ -32,7 +32,7 @@ export function CartItem({ value }) {
       <div className="flex-1 flex flex-col text-sm md:text-base text-[var(--dark-grayish-blue)]">
         <p>{name}</p>
         <p>
-          ${discountedPrice} x {value.quantity}{" "}
+          ${discountedPrice} x {item.quantity}{" "}
           <span className="text-[var(--very-dark-blue)] font-bold">
             ${totalPrice}
           </span>

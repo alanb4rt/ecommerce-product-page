@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import Button from "./Button";
-import { CartItem } from "./CartItem";
+import CartItem from "./CartItem";
 import { CartContext } from "../contexts/CartProvider";
-
 export default function Cart() {
   const { cartItems } = useContext(CartContext);
 
   return (
-    <section className="absolute left-2 md:left-[inherit] right-2 md:right-[inherit] top-16 md:top-10 mt-2 md:w-96 bg-white rounded-lg shadow-xl">
+    <section className="z-20 absolute left-2 md:left-auto right-2 md:right-auto top-16 md:top-10 mt-2 md:w-96 bg-white rounded-lg shadow-xl">
       <div className="p-6 border-b-[1px]">
         <p className="font-bold">Cart</p>
       </div>
@@ -17,7 +16,13 @@ export default function Cart() {
             Your cart is empty.
           </p>
         ) : (
-          cartItems.map((item, index) => <CartItem key={index} value={item} />)
+          <ul className="grid gap-4">
+            {cartItems.map((item, index) => (
+              <li key={index}>
+                <CartItem item={item} />
+              </li>
+            ))}
+          </ul>
         )}
         {cartItems.length > 0 && <Button>Checkout</Button>}
       </div>
