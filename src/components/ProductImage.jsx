@@ -12,7 +12,13 @@ export default function ProductImage({
       className="w-full h-72 md:h-auto object-cover cursor-pointer md:rounded-2xl md:mb-8"
       src={getImageURL(`${activeImageIndex}.jpg`)}
       alt={activeImageIndex}
-      onClick={isMobile ? undefined : () => setIsLightboxVisible(true)}
+      onClick={
+        isMobile
+          ? undefined
+          : setIsLightboxVisible
+          ? () => setIsLightboxVisible(true)
+          : undefined
+      }
     />
   );
 }
