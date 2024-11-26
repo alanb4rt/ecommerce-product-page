@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header>
-      <div className="w-full max-w-screen-lg mx-auto p-4 md:px-4 md:py-0">
+      <div className="w-full max-w-screen-lg mx-auto py-4 px-6 md:px-4 md:py-0">
         <div className="flex items-center gap-6 md:gap-12 md:border-b-2">
           <div className="md:hidden leading-none">
             <button

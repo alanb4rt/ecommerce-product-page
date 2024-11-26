@@ -9,7 +9,7 @@ export default function NavListMobile({
     <section className={isMobileMenuOpen ? "block" : "hidden"}>
       {isMobileMenuOpen && (
         <div className="z-10 fixed inset-0 bg-black/75">
-          <nav className="w-3/4 h-full p-8 bg-white">
+          <nav className="w-3/4 h-full p-6 bg-white">
             <button
               className="text-[var(--dark-grayish-blue)] hover:text-[var(--color-primary)] mb-10"
               onClick={() => setIsMobileMenuOpen(false)}
